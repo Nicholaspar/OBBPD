@@ -1,6 +1,8 @@
-Known issues: 
+Known + fixed issues: 
 
-1. The plugin counter "Remaining" does not update properly.
+1. Broken load order not getting adjusted. (FIXED V1.1).
+2. The plugin counter "Remaining" does not update properly. (FIXED V1.2).
+3. turbo_batching_mode needs to be ready for V2.0.
 
 🧩 OBBPD - Oblivion Broken Batch Plugin Detector
 
