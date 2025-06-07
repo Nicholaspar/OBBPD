@@ -1,3 +1,7 @@
+Known issues: 
+
+1. The plugin counter "Remaining" does not update properly.
+
 # 🧩 OBBPD - Oblivion Broken Batch Plugin Detector
 
 > A diagnostic safety tool for **Oblivion Remastered** that automatically tests mod plugins in batches, detects crashes, and identifies `.esp`/`.esm` files causing instability.
