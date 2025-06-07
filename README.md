@@ -2,13 +2,13 @@ Known issues:
 
 1. The plugin counter "Remaining" does not update properly.
 
-# 🧩 OBBPD - Oblivion Broken Batch Plugin Detector
+🧩 OBBPD - Oblivion Broken Batch Plugin Detector
 
 > A diagnostic safety tool for **Oblivion Remastered** that automatically tests mod plugins in batches, detects crashes, and identifies `.esp`/`.esm` files causing instability.
 
 ---
 
-## 📜 About
+📜 About
 
 **OBBPD** (Oblivion Broken Batch Plugin Detector) is a Python-based utility developed to help modders, players, and reviewers isolate crashing plugins in large load orders. By automating batch testing and log management, OBBPD saves hours of manual troubleshooting and produces a clean, minimal load order.
 
@@ -16,7 +16,7 @@ This project is made specifically for **internal diagnostic use** and **Nexus Mo
 
 ---
 
-## 🧠 How It Works
+🧠 How It Works
 
 OBBPD reads your current `plugins.txt` file and:
 
@@ -39,7 +39,7 @@ At the end, you're given the option to:
 
 ---
 
-## 🧩 Key Features
+🧩 Key Features
 
 - ✅ **Batch & Sub-Batch Testing** of `.esp` and `.esm` files
 - ✅ **Crash Detection** through process monitoring
@@ -52,9 +52,7 @@ At the end, you're given the option to:
 - ✅ **Manual Pause & Resume** controls
 - ✅ **Final Mega-Batch Recheck** to confirm full stability
 
----
-
-## 🗂 Folder Structure (Auto-created)
+🗂 Folder Structure (Auto-created)
 
 OBBPD/
 ├── obbpd.py
@@ -66,13 +64,7 @@ OBBPD/
 ├── Quarantine/
 │ └── session_2025-06-07_14-21-00/
 
-yaml
-Copy
-Edit
-
----
-
-## ⚙️ Configuration (`obbpd_config.ini`)
+⚙️ Configuration (`obbpd_config.ini`)
 
 This file is created automatically on first run if missing.
 
