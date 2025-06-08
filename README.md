@@ -11,7 +11,7 @@ The plugin counter “Remaining” does not update properly (FIXED V1.2)
 
 Turbo batching mode fully ready (COMPLETED V2.0)
 
-Removed unused debug window code (REMOVED 2.0)
+Removed unused debug window code (REMOVED V2.0)
 
 Some antivirus programs may flag the EXE as a false positive (see notice below)
 
