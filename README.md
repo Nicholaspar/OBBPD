@@ -1,177 +1,110 @@
-Known + fixed issues: 
+Known + Fixed Issues:
 
-1. Broken load order not getting adjusted. (FIXED V1.1).
-2. The plugin counter "Remaining" does not update properly. (FIXED V1.2).
-3. turbo_batching_mode needs to be ready for V2.0.
+• Broken load order not getting adjusted. (FIXED V1.1)
+• The plugin counter “Remaining” does not update properly. (FIXED V1.2)
+• Turbo batching mode fully ready for V2.0 (COMPLETED V2.0 READY)
+• Removed unused debug window code. (REMOVED 2.0)
 
-🧩 OBBPD - Oblivion Broken Batch Plugin Detector
-
-> A diagnostic safety tool for **Oblivion Remastered** that automatically tests mod plugins in batches, detects crashes, and identifies `.esp`/`.esm` files causing instability.
-
----
-
-📜 About
-
-**OBBPD** (Oblivion Broken Batch Plugin Detector) is a Python-based utility developed to help modders, players, and reviewers isolate crashing plugins in large load orders. By automating batch testing and log management, OBBPD saves hours of manual troubleshooting and produces a clean, minimal load order.
-
-This project is made specifically for **internal diagnostic use** and **Nexus Mods safety review**.
-
----
-
-🧠 How It Works
-
-OBBPD reads your current `plugins.txt` file and:
-
-1. **Backs it up** into a timestamped session folder.
-2. **Verifies required plugins** are stable and launchable.
-3. **Splits all other plugins into batches** for testing.
-4. Launches the game for each batch, watching for:
-   - Crashes
-   - Hangs
-   - Manual interruptions
-5. On crash, it automatically:
-   - Retests in **smaller sub-batches**
-   - Isolates broken plugin(s)
-   - Logs results
-
-At the end, you're given the option to:
-- Restore original load order
-- Quarantine broken plugins
-- Keep the clean, stable loadout
-
----
-
-🧩 Key Features
-
-- ✅ **Batch & Sub-Batch Testing** of `.esp` and `.esm` files
-- ✅ **Crash Detection** through process monitoring
-- ✅ **Patch-Aware Logic** – skips compatibility patches until core mods pass
-- ✅ **Custom Load Order Enforcement** for required/optional plugins
-- ✅ **Turbo Mode** for speed testing
-- ✅ **Terminal UI** with live plugin status
-- ✅ **Log Files & Backups** created per session
-- ✅ **Quarantine Support** – broken plugins are stored safely
-- ✅ **Manual Pause & Resume** controls
-- ✅ **Final Mega-Batch Recheck** to confirm full stability
-
-🗂 Folder Structure (Auto-created)
-
-OBBPD/
-├── obbpd.py
-├── obbpd_config.ini
-├── Backups/
-│ └── session_2025-06-07_14-21-00/
-├── Logs/
-│ └── session_2025-06-07_14-21-00/
-├── Quarantine/
-│ └── session_2025-06-07_14-21-00/
-
-⚙️ Configuration (`obbpd_config.ini`)
-
-This file is created automatically on first run if missing.
-
-### Example:
-```ini
-[Settings]
-wait_seconds = 11
-after_close_delay = 3
-batch_size = 10
-truncate_length = 25
-turbo_mode = False
-
-[CorePlugins]
-required = Oblivion.esm, Knights.esp, AltarESPMain.esp
-optional = Unofficial Oblivion Remastered Patch.esp
-Options:
-Option	Description
-wait_seconds	How long to wait after game launch
-after_close_delay	Delay after game closes
-batch_size	How many plugins to test at once
-truncate_length	Shortens plugin names in the UI
-turbo_mode	Enables fast cycle times
-required	Always-loaded core plugins
-optional	Important but non-essential patches
-
-🚀 How to Use
-1. Run in the same folder as your Config.ini
-
-2. Run the script
-bash
-Copy
-Edit
-python obbpd.py
-
-3. Follow the prompts
-Confirm backup or restore of previous session
-
-Watch testing batches run automatically
-
-View the terminal UI as it logs progress
-
-Choose how to handle failed plugins (quarantine / revert / keep)
-
-💻 Requirements
-Windows OS (10/11)
-
-Python 3.7+
-
-Steam or GOG version of Oblivion Remastered
-
-A valid and writable plugins.txt
-
-OBSE loader installed and used as entry point
-
-💾 Files Managed
-File	Purpose
-plugins.txt	Modified during testing
-obbpd_config.ini	User settings
-Backups/	Original load orders per session
-Logs/	Plugin test results
-Quarantine/	Broken plugins (if quarantined)
-
-📑 Nexus Mods Use Case
-This project was designed for Nexus Mods staff and modders to verify plugin stability and isolate incompatibilities in large Oblivion mod lists.
-
-You are encouraged to:
-
-Clone this repo for code review
-
-Run tests on your own load order
-
-View detailed logs and summaries in the terminal or log files
-
-📌 Developer Notes
-All critical file operations are protected by backups
-
-Logs are written via a background thread (non-blocking)
-
-Game process is launched via OBSE64 loader and monitored directly
-
-Supports both .esp and .esm files
-
-Handles Vortex-generated plugin headers
-
-🔐 License & Terms
-kotlin
-Copy
-Edit
-Copyright © 2025 Nicholas Parfitt  
-All rights reserved.
-
-This software is NOT open source. You may NOT:
-- Copy or reproduce any part of this code
-- Modify, distribute, or share this software
-- Use this code in any commercial or personal project  
-  without explicit written permission from the author
-
-Unauthorized use or distribution is strictly prohibited  
-and may result in legal action.
-
-For permissions or inquiries, contact: Nicholas Parfitt
-📫 Contact
-If you are a Nexus Mods reviewer or need permission for safe use/testing:
-
+• Some antivirus programs may flag the EXE as a false positive (see notice below).
+OBBPD v2.0 – Oblivion Broken Batch Plugin DetectorCrash Isolation and Diagnostic Tool for Oblivion Remastered Modlists
+Version: 2.0
 Author: Nicholas Parfitt
-Intended Use: Diagnostic / Safety Review Only
-Do Not Distribute, Upload, or Fork without permission
+© 2025 Nicholas Parfitt. All rights reserved.
+⚠️ IMPORTANT: Virus Scanner False PositivesOBBPD v2.0 is a custom-built EXE.
+Some antivirus or security software may flag it as suspicious or a “generic trojan” due to its automation, scripting, and ability to launch external programs for game testing.
+This is a known and common issue with small-batch EXE tools built with PyInstaller and similar utilities.
+OBBPD does NOT contain any malicious code.
+If you downloaded it from the official source or directly from Nicholas Parfitt, you can safely whitelist it in your antivirus.
+🚀 What is OBBPD?OBBPD stands for Oblivion Broken Batch Plugin Detector.
+It helps Oblivion Remastered players and modders automatically and quickly find which .esp or .esm files are crashing their game—even in huge modlists.
+How it works:
+• Tests your load order in automated batches
+• Detects crashes at launch
+• Narrows down broken plugins
+• Quarantines or comments out problem files
+• Rebuilds your load order with only safe mods
+🆕 What’s New in v2.0?Turbo Batch Mode:
+Super-fast troubleshooting. When a plugin crashes, it’s removed and a mega-batch of all remaining plugins is attempted. Ends early if possible.
+Core Plugins Always Passed:
+All required and optional plugins (set in the config) are always listed as “passed” if they pass the initial check.
+Smarter Patch/Fix Handling:
+Patch/fix/compatibility plugins are tested after the main mods, so load order is correct.
+Improved Session Folders:
+Every run creates timestamped backup, log, and quarantine folders for easy reverts and history.
+Enhanced Logging & UI:
+Full logs, grouped and timestamped. Three-column fullscreen UI (Testing | Passed | Failed) with batch progress.
+Fully Configurable:
+All key options (batch size, turbo, plugins, display) are controlled in obbpd_config.ini.
+📦 Distribution & Legal NoticeThis software is closed-source and distributed as an EXE.
+You may NOT modify, share, reverse-engineer, or distribute this tool without written permission from Nicholas Parfitt.
+For support, feedback, or permissions:
+Contact Nicholas Parfitt.
+🧰 Requirements• Windows 10 or 11
+• OBSE64 (Oblivion Script Extender 64-bit) installed
+• OblivionRemastered-Win64-Shipping.exe
+• A valid plugins.txt (not overwritten by Vortex during testing)
+🛠 How It Works1. Backup and Restore:
+Backs up your current plugins.txt before any changes
+Restore original load order any time
+2. Sanity Check:
+Tests all required and optional plugins first
+Any crash here means a core mod or patch is broken
+3. Batch & Turbo Batch Testing:
+Standard Mode: Plugins are tested in batches (batch size in config). If a batch fails, it’s split or tested individually.
+Turbo Batch Mode: As soon as a plugin fails, it’s removed and a mega-batch is attempted with all remaining plugins. If it passes, you’re done!
+4. Patch/Fix Plugins:
+Patch/fix/compatibility plugins are tested after main mods to keep load order stable.
+5. Quarantine and Final Load Order:
+Broken plugins are moved to Quarantine (session folder) or commented out in plugins.txt with a timestamp and “REMOVED BY OBBPD”.
+📁 Folder StructureEach session creates subfolders for perfect organization:
+Backups/session_YYYY-MM-DD_HH-MM-SS — Original plugins.txt
+Logs/session_YYYY-MM-DD_HH-MM-SS — Batch/test logs
+Quarantine/session_YYYY-MM-DD_HH-MM-SS — Broken .esp/.esm files
+⚙ Configuration (obbpd_config.ini)Example:
 
+[CorePlugins]required = Oblivion.esm, DLCBattlehornCastle.esp, DLCFrostcrag.esp, DLCHorseArmor.esp, DLCMehrunesRazor.esp, DLCOrrery.esp, DLCShiveringIsles.esp, DLCSpellTomes.esp, DLCThievesDen.esp, DLCVileLair.esp, Knights.esp, AltarESPMain.esp, AltarDeluxe.espoptional = Unofficial Oblivion Remastered Patch.esp, Unofficial Oblivion Remastered Patch - Deluxe.esp[Settings]wait_seconds = 10after_close_delay = 2batch_size = 50truncate_length = 25turbo_mode = Falseturbo_batch_mode = True
+
+🖥️ UI & ControlsDisplay:
+Fullscreen, three columns:
+Testing
+Recently Passed
+Failed
+Shows batch progress, stats, and current batch size.
+While testing:
+• Press any key to pause
+• R: Resume
+• V: Revert to original load order and quit
+• Q: Quit and keep current state
+📝 plugins.txt Output ExampleVortex-compatible formatting.
+Required and optional files always at the top
+All safe plugins listed in load order
+Broken plugins commented out with timestamp and “REMOVED BY OBBPD”
+Example:
+
+##OBBPD ENFORCED ORDER (2025-06-07 18:00:00)##
+Oblivion.esm
+DLCShiveringIsles.esp
+BetterCities.esp
+##REMOVED PLUGINS###BrokenFollower.esp #REMOVED BY OBBPD (2025-06-07 18:00:00)
+
+📋 End-of-Run SummaryAt the end of each session, OBBPD will:
+Show total passed, failed, and remaining plugins
+Offer to quarantine failed files, restore the original plugin list, or exit and keep the new load order
+Save logs and session states to subfolders
+🛑 Vortex Users NoteIf you use Vortex:
+Vortex will overwrite plugins.txt!
+To use OBBPD safely:
+• Temporarily disable Vortex’s deployment/auto-deploy• Run Oblivion directly (not from Vortex) using OBSE64• Let OBBPD finish, then manually import your plugins.txt back into Vortex
+❓ TroubleshootingGame won’t launch?
+Check your game path and required plugins. OBSE64 must be used.
+Script exits early?
+A required plugin is missing or broken.
+No plugins tested?
+Make sure your plugins.txt has enabled (non-comment) lines.
+Game keeps reverting/crashing?
+Run LOOT before and after making changes in Vortex.
+Vortex will notify you after re-deploying that files have been removed after OBBPD has quarantined bad plugins. This is normal—always disable breaking mods in Vortex before moving forward.
+Created by:
+Nicholas Parfitt
+Enjoy Oblivion Remastered safely and quickly!
+Thanks for using OBBPD v2.0.
